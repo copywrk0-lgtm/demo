@@ -11,7 +11,6 @@ export default function Footer(){
       </div>
     </div>
     <div className="footer-line"/>
-    <div className="footer-bottom"><span>KORAMANGALA, BENGALURU</span><span>© {new Date().getFullYear()} MOTION &amp; MEND</span><span className="footer-legal"><Link href="/privacy">Privacy</Link><Link href="/terms">Terms</Link><Link href="/medical-disclaimer">Medical disclaimer</Link><Link href="/cancellation-policy">Appointments</Link></span></div>
-    <p className="legal-footer-note">General website information is not a substitute for individual clinical assessment. This website does not provide emergency medical care. Legal and clinical policy pages should be reviewed and completed by the clinic before launch.</p>
+    <div className="footer-bottom"><span>KORAMANGALA, BENGALURU</span><span>© {new Date().getFullYear()} MOTION &amp; MEND</span><span className="concept-label">CONCEPT BUILD / PRESENTATION SITE</span><span className="footer-legal"><Link href="/privacy">Privacy</Link><Link href="/terms">Terms</Link><Link href="/medical-disclaimer">Medical disclaimer</Link><Link href="/cancellation-policy">Appointments</Link></span></div>
   </footer>;
 }
