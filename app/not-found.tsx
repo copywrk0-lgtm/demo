@@ -1,0 +1,1 @@
+import Link from "next/link"; export default function NotFound(){return <section className="page-hero"><div className="eyebrow">404</div><h1>That page has moved.</h1><p>Let’s get you back to Motion &amp; Mend.</p><Link className="cta" href="/">Back home →</Link></section>}
