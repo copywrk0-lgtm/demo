@@ -6,7 +6,7 @@ type RevealProps = {
   children: ReactNode;
   className?: string;
   delay?: number;
-  variant?: "up" | "left" | "right" | "scale";
+  variant?: "up" | "left" | "right" | "scale" | "cinematic";
 };
 
 export default function Reveal({
