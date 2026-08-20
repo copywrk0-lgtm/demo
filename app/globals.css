@@ -197,3 +197,13 @@ main{overflow:hidden}
 @media(max-width:800px){.hero{min-height:calc(100svh - 70px);align-items:flex-end}.hero-cinematic:before{inset:4%;border-radius:22px}.hero-copy{padding:110px 22px 105px}.hero h1{font-size:clamp(4rem,18vw,6.5rem);margin:14px 0 20px}.hero-meta{top:18px;font-size:.48rem}.hero-meta span:last-child{display:none}.founder-badge{left:22px;right:auto;bottom:28px;max-width:245px}.hero-scroll{display:none}.hero-video-overlay{background:linear-gradient(180deg,rgba(25,17,22,.18) 20%,rgba(25,17,22,.5) 58%,rgba(25,17,22,.86) 100%)}}
 
 @media(prefers-reduced-motion:reduce){.hero-video{transform:none}.reveal-enabled .reveal-cinematic.is-visible > section > *{animation:none}.reveal-enabled .reveal-cinematic{filter:none;clip-path:none}}
+
+/* Founder gallery — eliminate the dead space beside the long founder card.
+   The gallery now stretches to the full height of its grid row, so the visual column
+   carries the section instead of ending halfway down it. */
+@media(min-width:801px){
+  .founder-grid{align-items:stretch}
+  .founder-grid > .gallery{height:100%;min-height:100%;align-self:stretch;grid-template-rows:minmax(360px,1.2fr) minmax(230px,1fr)}
+  .founder-grid > .gallery .gallery-feature,
+  .founder-grid > .gallery > img:not(.wide){height:100%;min-height:0}
+}
