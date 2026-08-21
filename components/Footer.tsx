@@ -11,6 +11,6 @@ export default function Footer(){
       </div>
     </div>
     <div className="footer-line"/>
-    <div className="footer-bottom"><span>KORAMANGALA, BENGALURU</span><span>© {new Date().getFullYear()} MOTION &amp; MEND</span><span className="concept-label">CONCEPT BUILD / PRESENTATION SITE</span><span className="footer-legal"><Link href="/privacy">Privacy</Link><Link href="/terms">Terms</Link><Link href="/medical-disclaimer">Medical disclaimer</Link><Link href="/cancellation-policy">Appointments</Link></span></div>
+    <div className="footer-bottom"><span>KORAMANGALA, BENGALURU</span><span>© {new Date().getFullYear()} MOTION &amp; MEND</span><span className="footer-legal"><Link href="/privacy">Privacy</Link><Link href="/terms">Terms</Link><Link href="/medical-disclaimer">Medical disclaimer</Link><Link href="/cancellation-policy">Appointments</Link></span></div>
   </footer>;
 }

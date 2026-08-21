@@ -48,13 +48,22 @@ export default function Reveal({
       },
       {
         threshold: 0.01,
-        rootMargin: "0px 0px -40px 0px",
+        rootMargin: "240px 0px 240px 0px",
       }
     );
 
     observer.observe(el);
 
-    return () => observer.disconnect();
+    // Never leave a section blank if an observer is interrupted by hydration,
+    // a fast scroll, browser restoration, or a cached navigation state.
+    const safetyTimer = window.setTimeout(() => {
+      el.classList.add("is-visible");
+    }, 1600);
+
+    return () => {
+      window.clearTimeout(safetyTimer);
+      observer.disconnect();
+    };
   }, []);
 
   return (

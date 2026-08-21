@@ -3,6 +3,7 @@ import { Playfair_Display, Manrope, IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import MobileCta from "@/components/MobileCta";
 
 const headingFont = Playfair_Display({ subsets: ["latin"], variable: "--font-heading", display: "swap" });
 const bodyFont = Manrope({ subsets: ["latin"], variable: "--font-body", display: "swap" });
@@ -39,6 +40,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <Header />
       <main id="main-content">{children}</main>
       <Footer />
+      <MobileCta />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
     </body>
   </html>;
