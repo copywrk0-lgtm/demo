@@ -21,44 +21,37 @@ export default function Reveal({
     const el = ref.current;
     if (!el) return;
 
-    const reduce = window.matchMedia(
-      "(prefers-reduced-motion: reduce)"
-    ).matches;
+    // Important: the element is ALWAYS visible by default.
+    // We only add the animation class when it enters the viewport.
+    // This prevents a failed/interrupted IntersectionObserver from ever
+    // creating a giant blank section in the page.
+    const show = () => el.classList.add("is-visible");
 
-    if (reduce) {
-      el.classList.add("is-visible");
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      show();
       return;
     }
 
-    document.documentElement.classList.add("reveal-enabled");
-
-    // Reveal content that is already visible immediately. This prevents the
-    // page from ever showing a large blank panel during hydration.
     const rect = el.getBoundingClientRect();
-    if (rect.top < window.innerHeight * 0.92 && rect.bottom > 0) {
-      el.classList.add("is-visible");
+    if (rect.top < window.innerHeight * 0.94 && rect.bottom > 0) {
+      show();
     }
 
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          el.classList.add("is-visible");
+          show();
           observer.disconnect();
         }
       },
-      {
-        threshold: 0.01,
-        rootMargin: "240px 0px 240px 0px",
-      }
+      { threshold: 0, rootMargin: "180px 0px 180px 0px" }
     );
 
     observer.observe(el);
 
-    // Never leave a section blank if an observer is interrupted by hydration,
-    // a fast scroll, browser restoration, or a cached navigation state.
-    const safetyTimer = window.setTimeout(() => {
-      el.classList.add("is-visible");
-    }, 1600);
+    // If a browser fails to deliver an intersection callback, still animate
+    // the element after a short delay rather than leaving anything hidden.
+    const safetyTimer = window.setTimeout(show, 900);
 
     return () => {
       window.clearTimeout(safetyTimer);
