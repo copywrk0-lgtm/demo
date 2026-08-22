@@ -209,17 +209,17 @@ main{overflow:hidden}
    The gallery now stretches to the full height of its grid row, so the visual column
    carries the section instead of ending halfway down it. */
 @media(min-width:801px){
-  .founder-grid{align-items:stretch}
-  .founder-grid > .gallery{height:100%;min-height:100%;align-self:stretch;grid-template-rows:minmax(360px,1.2fr) minmax(230px,1fr)}
+  .founder-grid{align-items:start}
+  .founder-grid > .gallery{height:auto;min-height:0;align-self:start;grid-template-rows:minmax(360px,1.2fr) minmax(230px,1fr)}
   .founder-grid > .gallery .gallery-feature,
-  .founder-grid > .gallery > img:not(.wide){height:100%;min-height:0}
+  .founder-grid > .gallery > img:not(.wide){min-height:0}
 }
 
 /* Final editorial layout pass: replace the dead gallery space with a designed narrative block. */
-.founder-grid{grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:34px;align-items:stretch}
-.founder-column{height:100%}
-.founder-column .letter{height:100%}
-.founder-grid > .gallery{height:100%;min-height:0;align-self:stretch;grid-template-columns:1.08fr .92fr;grid-template-rows:minmax(390px,1.15fr) minmax(280px,.85fr);gap:12px}
+.founder-grid{grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:34px;align-items:start}
+.founder-column{height:auto;align-self:start}
+.founder-column .letter{height:auto}
+.founder-grid > .gallery{height:auto;min-height:0;align-self:start;grid-template-columns:1.08fr .92fr;grid-template-rows:minmax(390px,1.15fr) minmax(280px,.85fr);gap:12px}
 .founder-grid > .gallery .gallery-feature{grid-column:1 / 3;grid-row:1}
 .founder-grid > .gallery > img:not(.wide){grid-column:1;grid-row:2;height:100%;min-height:0}
 .gallery-note{grid-column:2;grid-row:2;position:relative;display:flex;flex-direction:column;justify-content:flex-end;padding:30px;background:var(--primary);color:var(--white);border-radius:18px;overflow:hidden}
@@ -316,7 +316,7 @@ main{overflow:hidden}
     font-size:0;
     box-shadow:0 5px 18px rgba(44,34,28,.06);
   }
-  .menu-button:before{content:"☰";font-size:1.15rem;line-height:1}
+  .menu-button:before{content:"";width:18px;height:12px;border-top:2px solid currentColor;border-bottom:2px solid currentColor;box-shadow:0 5px 0 -3px currentColor}
   .nav{
     display:none;
     position:absolute;
@@ -339,14 +339,14 @@ main{overflow:hidden}
   .nav a:hover{background:var(--surface-2)}
   .nav .pill{margin-top:4px;text-align:center;background:var(--surface-2);padding:13px 14px}
 
-  .section{padding:68px 18px}
+  .section{padding:60px 18px}
   .section-heading{display:block;margin-bottom:30px}
   .section-heading h2{font-size:clamp(2.35rem,11vw,3.5rem);margin-top:10px}
   .section-heading>p{margin-top:16px;font-size:.9rem}
   .section-heading .text-link{display:inline-block;margin-top:18px}
 
   .hero{min-height:calc(100svh - 68px);min-height:calc(100dvh - 68px)}
-  .hero-copy{padding:96px 20px 92px}
+  .hero-copy{padding:88px 20px 92px}
   .hero h1{font-size:clamp(3.55rem,17vw,5.6rem);line-height:.88;letter-spacing:-.06em;max-width:100%}
   .hero p{font-size:.94rem;line-height:1.65;max-width:32rem}
   .quote{font-size:1rem;line-height:1.5}
@@ -491,4 +491,18 @@ main{overflow:hidden}
 @media (hover:none){
   .service-card:hover,.gallery-note:hover,.founder-badge:hover{transform:none;box-shadow:none}
   .gallery img:hover{transform:none}
+}
+
+
+/* Production polish: tighter section rhythm, clear mobile separation, and honest legal-review treatment. */
+.section{position:relative}
+.section + .section{border-top:1px solid rgba(221,212,202,.42)}
+.legal-review-note{margin-top:26px;padding:14px 16px;border:1px solid var(--line);border-radius:14px;background:var(--surface-2);color:var(--muted);font-size:.72rem;line-height:1.6}
+.legal-review-note strong{color:var(--primary)}
+@media(max-width:800px){
+  .section + .section{border-top-color:rgba(221,212,202,.5)}
+  .site-header{box-shadow:0 8px 24px rgba(44,34,28,.04)}
+  .hero{min-height:calc(100svh - 68px);}
+  .founder-grid > .gallery{align-self:start}
+  .closing-cta{margin-bottom:0}
 }

@@ -18,13 +18,13 @@ const monoFont = IBM_Plex_Mono({ subsets: ["latin"], variable: "--font-mono", we
 export const metadata: Metadata = {
   title: { default: "Motion & Mend Physiotherapy | Koramangala, Bengaluru", template: "%s | Motion & Mend Physiotherapy" },
   description: "Assessment-led physiotherapy, sports rehabilitation and practical recovery plans in Koramangala, Bengaluru.",
-  metadataBase: new URL("https://motionandmend.com"),
+  metadataBase: new URL("https://demo-pearl-nine-63.vercel.app"),
   alternates: { canonical: "/" },
   openGraph: {
     title: "Motion & Mend Physiotherapy",
     description: "Move better. Live fully.",
     type: "website",
-    url: "https://motionandmend.com",
+    url: "https://demo-pearl-nine-63.vercel.app",
     siteName: "Motion & Mend Physiotherapy",
     images: [{ url: "/og.svg", width: 1200, height: 630, alt: "Motion & Mend Physiotherapy" }],
   },
@@ -38,7 +38,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     name: "Motion & Mend Physiotherapy",
     description: "Assessment-led physiotherapy and rehabilitation in Koramangala, Bengaluru.",
     areaServed: "Koramangala, Bengaluru",
-    url: "https://motionandmend.com",
+    url: "https://demo-pearl-nine-63.vercel.app",
   };
 
   return <html lang="en" className={`${headingFont.variable} ${bodyFont.variable} ${monoFont.variable}`}>

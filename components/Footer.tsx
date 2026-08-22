@@ -7,7 +7,7 @@ export default function Footer(){
       <div className="footer-contact">
         <Link href="/services">Services</Link>
         <Link href="/approach">Approach</Link>
-        <Link href="/contact">Book an assessment</Link>
+        <Link href="/contact">Start an enquiry</Link>
       </div>
     </div>
     <div className="footer-line"/>

@@ -15,10 +15,9 @@ export default function EnquiryForm() {
     return (
       <div className="form-success" role="status">
         <div className="eyebrow">ENQUIRY READY</div>
-        <h3>Thanks — the next step is clear.</h3>
+        <h3>Your enquiry is prepared.</h3>
         <p>
-          This demo form is ready to connect to the clinic&apos;s email, CRM or booking workflow.
-          No patient information is stored by this prototype.
+          This preview does not transmit or store your information. In a production site, this form should be connected to the clinic&apos;s chosen booking, email or CRM workflow.
         </p>
         <button className="cta" type="button" onClick={() => setSubmitted(false)}>
           Send another enquiry
@@ -47,8 +46,8 @@ export default function EnquiryForm() {
         </label>
         <label className="mm-field full">Message<textarea name="message" placeholder="Briefly tell us what has been bothering you." /></label>
       </div>
-      <label className="consent-row"><input type="checkbox" required name="privacyConsent" /> <span>I agree that Motion &amp; Mend may use the information I submit to respond to this enquiry. I have read the <Link href="/privacy">Privacy Notice</Link>.</span></label><button className="mm-submit" type="submit">Request an assessment →</button>
-      <p className="form-note">Demo flow: connect this form to the clinic&apos;s preferred booking or CRM system before launch.</p>
+      <label className="consent-row"><input type="checkbox" required name="privacyConsent" /> <span>I agree that Motion &amp; Mend may use the information I submit to respond to this enquiry. I have read the <Link href="/privacy">Privacy Notice</Link>.</span></label><button className="mm-submit" type="submit">Prepare my enquiry →</button>
+      <p className="form-note">Preview form — submissions are not sent anywhere yet.</p>
     </form>
   );
 }
