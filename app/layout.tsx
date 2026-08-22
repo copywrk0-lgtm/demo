@@ -5,6 +5,12 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import MobileCta from "@/components/MobileCta";
 
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+  viewportFit: "cover",
+};
+
 const headingFont = Playfair_Display({ subsets: ["latin"], variable: "--font-heading", display: "swap" });
 const bodyFont = Manrope({ subsets: ["latin"], variable: "--font-body", display: "swap" });
 const monoFont = IBM_Plex_Mono({ subsets: ["latin"], variable: "--font-mono", weight: ["400", "500"], display: "swap" });
